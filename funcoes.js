@@ -170,7 +170,6 @@ function calculadora(){
                 }
                 else{
                     var total = calculo[0].trim();
-                    console.log(total);
                     for(var i = 1; i<calculo.length;i++){
                         total = total + calculo[i].trim();
                     }
@@ -180,7 +179,6 @@ function calculadora(){
                 total = parseFloat(total.trim());
                 
                 valores[quantClick] = total;
-                console.log(calculo);
                 if(valores.length >=2){
                     tela.innerHTML +=  num[index].innerHTML.trim();
                 }
@@ -200,55 +198,51 @@ function calculadora(){
             })
         }
     })
-    function click_Botao(index){
-        let tela = document.getElementsByClassName('numeros')[0];
+    function deletar(){
+        let apagar = document.getElementById("apagar");
 
-        //Função para resetar a tela e apagar os números
-
-        function deletar(){
-            let apagar = document.getElementById("apagar");
-
-            apagar.addEventListener("click", ()=>{
-                if(power === 0){
-                    return
+        apagar.addEventListener("click", ()=>{
+            if(power === 0){
+                return
+            }
+            if(valores != undefined ){
+                let tela = document.getElementsByClassName("numeros")[0].innerHTML; 
+                let valorNaTela = tela.slice(0,tela.length - 1);
+                if(tela != String){
                 }
-                if(valores != undefined ){
-                    let tela = document.getElementsByClassName("numeros")[0].innerHTML; 
-                    let valorNaTela = tela.slice(0,tela.length - 1);
-                    if(tela != String){
-                        console.log("Vazio")
-                    }
-                    document.getElementsByClassName("numeros")[0].innerHTML = valorNaTela;
-                    if(tela.slice(tela.length - 1,tela.length) >=0 ||tela.slice(tela.length - 1,tela.length) <=0 ){
-                        if(isNaN(valores[quantClick])){
-                            conta.pop();
-                        }
-                        else{
-                            valores[quantClick] = valores[quantClick].toString();
-                            valores[quantClick] = valores[quantClick].slice(0,valores[quantClick].length - 1);
-                            valores[quantClick] = parseFloat(valores[quantClick]);
-                            calculo.pop();
-                        }
+                document.getElementsByClassName("numeros")[0].innerHTML = valorNaTela;
+                if(tela.slice(tela.length - 1,tela.length) >=0 ||tela.slice(tela.length - 1,tela.length) <=0 ){
+                    if(isNaN(valores[quantClick])){
+                        conta.pop();
                     }
                     else{
-                        conta.pop();
-                        conta.pop();
-                        console.log("valores na conta: "  + conta)
-                        quantClick--;
-                        
-                        if(calculo.length == 0){
-                            valores[quantClick] = valores[quantClick].toString();
-                            for (let i = 0; i< valores[quantClick].length ; i++){
-                                calculo.push(valores[quantClick].charAt(i))
-                            }
-                            valores[quantClick] = parseFloat(valores[quantClick]);
-                        }
-                        
+                        valores[quantClick] = valores[quantClick].toString();
+                        valores[quantClick] = valores[quantClick].slice(0,valores[quantClick].length - 1);
+                        valores[quantClick] = parseFloat(valores[quantClick]);
+                        calculo.pop();
                     }
                 }
-            })
-        }
+                else{
+                    conta.pop();
+                    conta.pop();
+                    quantClick--;
+                    
+                    if(calculo.length == 0){
+                        valores[quantClick] = valores[quantClick].toString();
+                        for (let i = 0; i< valores[quantClick].length ; i++){
+                            calculo.push(valores[quantClick].charAt(i))
+                        }
+                        valores[quantClick] = parseFloat(valores[quantClick]);
+                    }
+                    
+                }
+            }
+        })
+    }
 
+    deletar();
+    function click_Botao(){
+        let tela = document.getElementsByClassName('numeros')[0];
 
         function resetar(){
             let reset = document.getElementById('resetar');
@@ -541,7 +535,6 @@ function calculadora(){
         }
 
         // Chamada das funções dos botões de ações //
-                deletar();
                 ponto();
                 resetar();
                 calcular();
