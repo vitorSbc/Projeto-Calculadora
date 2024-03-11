@@ -1,0 +1,193 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+body, html{
+    background-color: #1E1E1E;
+}
+
+
+.corpo{
+    width: 25%;
+    min-width: 500px;
+    height: 85%;
+    margin: 50px auto;
+    border-radius: 20px;
+    background-color: #302D2A;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.corpo .detalhe{
+    width: 40%;
+    height: 15px;
+    margin: 30px;
+    border-radius: 30px;
+    background-color: #745312;
+    transition: 1s;
+}
+
+
+.corpo .tela{
+    width: 90%;
+    height: 9%;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #6e4e2e;
+    font-size: 45px;
+    text-align: right;
+    overflow: hidden;
+    line-height: 55px;
+    color:#f0e446 ;
+    font-family: "Pixelify Sans", sans-serif;
+    margin-bottom: 30px;
+    transition: 1s;
+}
+
+.numeros{
+    margin-right: -8px;
+    padding: 0px;
+}
+
+.traco{
+    margin: 0px;
+    padding: 0px;
+}
+
+.botao{
+    display: flex;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    margin: 10px 18px;
+    border-radius: 50px;
+    font-size: 35px;
+    font-family:sans-serif;
+    line-height: 80px;
+    background-color: #D9D9D9;
+    flex-direction: column;
+    align-items: center;  
+    transition: 0.5s;
+}
+
+.ligado{
+    transition: 0.5s;
+}
+
+.desligado{
+    transition: 0.5s;
+}
+
+@media screen and (max-width:600px){
+    .corpo{
+        min-width: 90%;
+    }
+
+    .corpo .tela{
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .botao{
+        line-height: 60px;
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+        margin: 5px 20px;
+    }
+}
+
+@media screen and (max-width:488px) {
+  
+    .corpo .tela{
+        line-height: 40px;
+        font-size: 40px;
+        height: 15%;
+    }
+
+    .botao{
+        line-height: 50px;
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+        margin: 3px 10px;
+    }
+
+}
+
+@media screen and (max-width:440px) {
+  
+    .corpo .tela{
+        line-height: 40px;
+        font-size: 40px;
+    }
+
+    .botao{
+        line-height: 50px;
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        margin: 3px 10px;
+    }
+
+}
+
+@media screen and (max-width:355px) {
+  
+    .corpo .tela{
+        line-height: 40px;
+        font-size: 40px;
+    }
+
+    .botao{
+        line-height: 50px;
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        margin: 3px 10px;
+    }
+
+}
+
+@media screen and (max-width:329px) {
+  
+    .corpo .tela{
+        line-height: 40px;
+        font-size: 40px;
+    }
+
+    .botao{
+        line-height: 50px;
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+        margin: 3px 10px;
+    }
+
+}
+
+@media screen and (max-width:270px) {
+  
+    .corpo .tela{
+        line-height: 40px;
+        font-size: 40px;
+    }
+
+    .botao{
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        margin: 3px 10px;
+    }
+
+}
